@@ -48,7 +48,7 @@ const showNotification = (title: string, url: string) => {
 
 chrome.runtime.onInstalled.addListener(() => {
     chrome.alarms.create("checkNews", {
-        periodInMinutes: 5.0
+        periodInMinutes: 0.5
     });
 });
 
