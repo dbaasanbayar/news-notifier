@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Personal News Sensor",
+  "version": "1.0",
+  "description": "My first extension",
+  "permissions": ["storage", "notifications", "alarms"],
+  "host_permissions": ["https://newsapi.org/*"],
+  "background": {
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
+
