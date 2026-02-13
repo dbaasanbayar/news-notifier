@@ -43,7 +43,7 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name === "checkNews") {
         fetchNews();
-        // console.log("Current Time:", new Date().toLocaleTimeString());
+        console.log("Current Time:", new Date().toLocaleTimeString());
     }
 });
 //# sourceMappingURL=background.js.map
