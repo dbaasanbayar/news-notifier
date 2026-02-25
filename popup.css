@@ -7,8 +7,7 @@
 }
 
 body {
-  /* Critical: Define a width so the popup doesn't collapse */
-  width: 320px; 
+  width: 300px; 
   padding: 20px;
   background-color: #f9fafb;
 }
