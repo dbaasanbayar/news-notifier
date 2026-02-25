@@ -102,7 +102,7 @@ const fetchNews = async () => {
 const showNotification = (title: string, url: string) => {
     chrome.notifications.create(url, {
         type: "basic",
-        iconUrl: "icons/icon.png",
+        iconUrl: "icons/owl.png",
         title: "New Article Found",
         message: title || "Click to read more",
         priority: 2
