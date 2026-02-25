@@ -117,7 +117,7 @@ const showNotification = (title: string, url: string) => {
 const showNotificationFallback = (title: string, url: string) => {
     chrome.notifications.create(url, {
         type: "basic",
-        iconUrl: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==", // Tiny transparent pixel
+        iconUrl: "icon/owl", 
         title: "New Article (Icon Load Failed)",
         message: title
     });
