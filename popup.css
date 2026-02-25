@@ -38,7 +38,7 @@ input[type="text"]:focus {
 
 button#save {
   width: 100%;
-  background-color: #6c4d76;
+  background-color: #aa64c0;
   color: white;
   border: none;
   padding: 10px;
@@ -49,7 +49,7 @@ button#save {
 }
 
 button#save:hover {
-  background-color: #1d4ed8;
+  background-color: #7694e7;
 }
 
 button#save:active {

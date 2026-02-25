@@ -11,7 +11,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icons/notif.png"
+    "default_icon": "icons/owl.png"
   },
   "icons": {
     "16": "icons/owl.png",
