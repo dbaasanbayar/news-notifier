@@ -49,10 +49,7 @@
 import { getLastArticleId, getTopic, setLastArticleId } from "./storage.js";
 console.log("Background service worker active");
 const API_KEY = "5baa431731ad44deaa6207d1a83b931c";
-// 1. Move Listener to Top Level
-// This prevents multiple tabs opening and works even if the worker restarts
 chrome.notifications.onClicked.addListener((notificationId) => {
-    // We used the URL as the ID in showNotification below
     if (notificationId.startsWith("https")) {
         chrome.tabs.create({ url: notificationId });
         chrome.notifications.clear(notificationId);
@@ -82,22 +79,19 @@ const fetchNews = async () => {
     }
 };
 const showNotification = (title, url) => {
-    // We use the article URL as the notification ID so the listener knows where to go
     chrome.notifications.create(url, {
         type: "basic",
-        iconUrl: "icons/icon.png", // Ensure this exists in your 'dist' folder!
+        iconUrl: "icons/icon.png",
         title: "New Article Found",
         message: title || "Click to read more",
         priority: 2
     }, (id) => {
         if (chrome.runtime.lastError) {
             console.error("Notification Error:", chrome.runtime.lastError.message);
-            // PRO TIP: If it fails, try again WITHOUT the icon to prove the icon is the issue
             showNotificationFallback(title, url);
         }
     });
 };
-// Fallback for when the icon is causing the "Unable to download" error
 const showNotificationFallback = (title, url) => {
     chrome.notifications.create(url, {
         type: "basic",
@@ -108,7 +102,7 @@ const showNotificationFallback = (title, url) => {
 };
 chrome.runtime.onInstalled.addListener(() => {
     chrome.alarms.create("checkNews", { periodInMinutes: 1.0 });
-    fetchNews(); // Run once immediately on install
+    fetchNews();
 });
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name === "checkNews") {
